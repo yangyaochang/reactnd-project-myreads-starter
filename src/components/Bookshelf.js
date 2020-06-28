@@ -2,10 +2,10 @@ import React, {Component} from 'react'
 import Book from './Book'
 import {getAll} from '../BooksAPI'
 
-// @description Represents a book
+// @description Represents a bookshelf
 // @constructor
-// @param {string} title - The title of the book
-// @returns {string} author - The author of the book
+// @param {string} title - An array of books
+// @returns {string} author - The UI of the books in same type
 
 export default class Bookshelf extends Component {
     constructor(props) {

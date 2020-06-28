@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 
-// @description Represents a book
+// @description Represents a Control
 // @constructor
-// @param {string} title - The title of the book
-// @returns {object} book - The UI of the book
+// @param {string} title - The id and type of a book
+// @returns {object} book - The UI of the control
 
 export default class Control extends Component {
     constructor(props) {

@@ -3,8 +3,8 @@ import Bookshelf from './Bookshelf'
 
 // @description Contains all shelves
 // @constructor
-// @param {string} title - The title of the book
-// @returns {object} author - The UI of the shelves
+// @param {string} title
+// @returns {object} author - The whole page
 
 export default class Shelves extends Component {
     constructor() {
