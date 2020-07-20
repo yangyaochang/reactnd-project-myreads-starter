@@ -9,24 +9,26 @@ export default class Control extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            type: this.props.type
+            shelf: null
         }
     }
 
     handleChange(event) {
         event.preventDefault()
-
-        const preType = this.state.type
-        const targetType = event.target.value
+        const targetShelf = event.target.value
         const id = this.props.id
 
-        this.props.moveBook(preType, targetType, id)
+        this.setState({
+            shelf: targetShelf
+        })
+        
+        this.props.moveBook(targetShelf, id)
     }
 
     render() {
         return (
             <div className="book-shelf-changer">
-                <select value = {this.state.type} onChange = {this.handleChange.bind(this)}>
+                <select value = {this.state.shelf || this.props.shelf} onChange = {this.handleChange.bind(this)}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>

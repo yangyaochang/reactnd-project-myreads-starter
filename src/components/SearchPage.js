@@ -17,9 +17,11 @@ export default class SearchPage extends Component {
         }
     }
     
-    componentDidMount() {
-        getAll().then(books => {
-            console.log(books)
+    handleChange = e => {
+        const value = e.target.value
+        if (value !== '') {}
+        search(value).then(books => {
+            console.log(books)  
             this.setState({
                 books: books.map(book => {
                     return {
@@ -28,40 +30,11 @@ export default class SearchPage extends Component {
                         author: book.authors,
                         backgroundImage: book.imageLinks.thumbnail
                     }
-                })
-            })            
-        }) 
-    }
-
-    handleChange = e => {
-        const value = e.target.value
-        search(value).then(books => {
-            console.log(books)        
+                }),
+                searchText: value
+            })                  
         })
-        this.setState({
-            searchText: value
-        })
-        
     }
-
-    // search = (text) => {
-    //     console.log(text)
-    //     // To avoid modifying the original products data, use spread operator to shallow copy the array
-    //     let books = [...this.state.books]
-
-    //     books = books.filter(book => {
-
-    //     })
-
-    //     products = products.filter(p => {
-    //         const matchedProduct = p.name.match(new RegExp(text, 'gi'))
-    //         if (matchedProduct) {return matchedProduct}
-    //     })
-
-    //     this.setState({
-    //         books: books
-    //     })
-    // }
 
     render() {
         return (

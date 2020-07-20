@@ -13,13 +13,10 @@ export default class Bookshelf extends Component {
     }
 
     render() {
-        const type = (this.props.type === 'Currently Reading') ? 'currentlyReading' :
-                        (this.props.type === 'Want to Read') ? 'wantToRead' :
-                        (this.props.type === 'Read') ? 'read' : null
 
         return (
             <div className="bookshelf">
-                <h2 className="bookshelf-title">{this.props.type}</h2>
+                <h2 className="bookshelf-title">{this.props.shelf}</h2>
                 <div className="bookshelf-books">
                     {this.props.books.map(book => 
                         <Book 
@@ -28,7 +25,7 @@ export default class Bookshelf extends Component {
                             backgroundImage = {book.backgroundImage} 
                             key = {book.id} 
                             id = {book.id}
-                            type = {type}
+                            shelf = {book.shelf}
                             moveBook = {this.props.moveBook}
                         />
                     )}
