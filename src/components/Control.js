@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {update} from '../BooksAPI'
 
 // @description Represents a Control
 // @constructor
@@ -17,12 +18,21 @@ export default class Control extends Component {
         event.preventDefault()
         const targetShelf = event.target.value
         const id = this.props.id
+        const book = {
+            id: this.props.id,
+            title: this.props.title,
+            author: this.props.author,
+            backgroundImage: this.props.backgroundImage,
+            shelf: targetShelf
+        }
 
         this.setState({
             shelf: targetShelf
         })
+
+        update(book, targetShelf).then(res => {console.log(res)})
         
-        this.props.moveBook(targetShelf, id)
+        this.props.editBook(id, book)
     }
 
     render() {

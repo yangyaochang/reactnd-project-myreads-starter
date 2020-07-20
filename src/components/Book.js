@@ -18,7 +18,14 @@ export default function Book(props) {
                     }}>
                 </div>
                 
-                <Control id = {props.id} shelf = {props.shelf} moveBook = {props.moveBook}/>
+                <Control 
+                    title = {props.title} 
+                    author = {props.author} 
+                    backgroundImage = {props.backgroundImage} 
+                    id = {props.id} 
+                    shelf = {props.shelf} 
+                    editBook = {props.editBook}
+                />
             </div>
 
             <div className="book-title">{props.title}</div>

@@ -26,7 +26,7 @@ export default class Bookshelf extends Component {
                             key = {book.id} 
                             id = {book.id}
                             shelf = {book.shelf}
-                            moveBook = {this.props.moveBook}
+                            editBook = {this.props.editBook}
                         />
                     )}
                 </div>
