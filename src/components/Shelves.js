@@ -4,7 +4,7 @@ import Bookshelf from './Bookshelf'
 // @description Contains all shelves
 // @constructor
 // @param {string} title
-// @returns {object} author - The whole page
+// @returns {object} author - Three different shelves
 
 export default function Shelves(props) {
     return (

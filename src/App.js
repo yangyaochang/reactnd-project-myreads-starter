@@ -1,10 +1,14 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Shelves from './components/Shelves'
 import SearchPage from './components/SearchPage'
 import {Link, Route} from 'react-router-dom'
 import {getAll} from './BooksAPI'
+
+// @description Represents the whole app, containing books data
+// @constructor
+// @param {string} title - 
+// @returns {object} book - The UI of the whole app
 
 class BooksApp extends React.Component {
   constructor() {

@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom'
 import {getAll, search} from '../BooksAPI'
 import Book from './Book'
 
-// @description Represents a Control
+// @description Represents the search page
 // @constructor
-// @param {string} title - The id and type of a book
-// @returns {object} book - The UI of the control
+// @param {string} title - editBook() function
+// @returns {object} book - The UI of search page
 
 export default class SearchPage extends Component {
     constructor(props) {

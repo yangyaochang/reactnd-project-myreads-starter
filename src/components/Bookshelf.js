@@ -5,7 +5,7 @@ import {getAll} from '../BooksAPI'
 // @description Represents a bookshelf
 // @constructor
 // @param {string} title - An array of books
-// @returns {string} author - The UI of the books in same type
+// @returns {string} author - The UI of the books in same shelf
 
 export default class Bookshelf extends Component {
     constructor(props) {
