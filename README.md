@@ -15,25 +15,28 @@ The project is a bookshelf app that allows users to select and categorize books 
 
 #### Main Page
 
-In this application, the main page displays a list of "shelves", each of which contains a number of books. The three shelves are:
+The main page displays a list of "shelves", each of which contains a number of books. The three shelves are:
 
 * Currently Reading
 * Want to Read
 * Read
 
-Each book has a control that lets users select the shelf for that book, moving a book to another shelf.
+Each book has a control, leting users select the shelf for that book, moving a book to another shelf. The control appears when users hover over books and the color of the control changes while hovering over it.
 
 #### Search Page
 
-The main page also has a link to `/search`, a search page that allows users to find books to add to their library.
+The main page has a link to `/search` page, allowing users to find books to add to their library.
 
 The search page has a text input that may be used to find books. As the value of the text input changes, the books that match that query are displayed on the page, along with a control that lets users add the book to their library. 
 
 
 ## Backend
 
-All books in this project are called from a backend API. It uses a fixed set of cached search results and is limited to a particular set of search terms. That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
+All books in this project are called from a backend API. It uses a fixed set of cached search results and is limited to a particular set of search terms. "No Results Found" will be shown if there isn't any matched result
 
-## Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
+
+## Reference
+
+This project is one of my learning outcomes of [Udacity's React Developer Nanodegree Program](https://www.udacity.com/course/react-nanodegree--nd019)
