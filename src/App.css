@@ -236,3 +236,9 @@ button:active {
   font-size: 0.8em;
 }
 
+.no-result-msg {
+  color: rgb(229, 229, 234);
+  font-family: -apple-system-caption1;
+  font-size: 20px;
+}
+

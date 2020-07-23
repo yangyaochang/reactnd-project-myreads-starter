@@ -101,7 +101,7 @@ export default class SearchPage extends Component {
                                 shelf = {book.shelf}
                                 editBook = {this.props.editBook}
                             />
-                        ) : <div>No Results Found</div>}
+                        ) : <div className='no-result-msg'>No Results Found</div>}
                     </ol>
                 </div>
             </div>
