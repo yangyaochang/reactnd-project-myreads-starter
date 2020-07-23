@@ -4,7 +4,7 @@ The project is a bookshelf app that allows users to select and categorize books 
 
 ## TL;DR
 
-* To view the project right away, please go to this [link]()
+* To view the project right away, please go to this [link](https://stupefied-kepler-ab0ba6.netlify.app)
 
 * If you choose to run it locally, you might need to run the commands below after you clone this repo.
 
