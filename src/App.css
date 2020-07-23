@@ -7,21 +7,26 @@ body {
 }
 
 body, .app {
-  background: white;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: rgb(28,28,30);
 }
 
 /* main page */
+.list-books {
+  padding: 10px 45px;
+}
 
 .list-books-title {
-  padding: 10px 0;
-  background: #2e7c31;
-  text-align: center;
+  padding: 10px 0px 5px;
+  margin: 0px 20px;
+  border-bottom: 0.5px solid rgb(72, 72, 74);
 }
 
 .list-books-title h1 {
   font-weight: 400;
-  margin: 0;
-  color: white;
+  color: rgb(229, 229, 234);
+  font-family: -apple-system-headline;
+  margin-bottom: 0px;
 }
 
 .list-books-content {
@@ -30,21 +35,26 @@ body, .app {
 }
 
 .bookshelf {
-  padding: 0 10px 20px;
+  padding: 20px 10px 0px;
 }
 
 @media (min-width: 600px) {
   .bookshelf {
-    padding: 0 20px 40px;
+    padding: 40px 20px 0px;
   }
 }
 
 .bookshelf-title {
-  border-bottom: 1px solid #dedede;
+  color: rgb(229, 229, 234);
+  border-bottom: 0.5px solid rgb(72, 72, 74);
+  font-family: -apple-system-caption1;
+  font-size: 20px;
+  padding-bottom: 5px;
 }
 
 .bookshelf-books {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .open-search {
@@ -58,7 +68,7 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: rgba(255, 255, 255, 0.5);
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -69,7 +79,7 @@ body, .app {
 }
 
 .open-search button:hover {
-  background-color: rgb(0, 102, 0);
+  background-color: rgb(0, 132, 255);
 }
 
 
@@ -139,41 +149,45 @@ button:active {
 }
 
 .book {
-  width: 140px;
+  width: 150px;
+  margin-right: 25px;
 }
 
 .book-title,
 .book-authors {
   font-size: 0.8em;
+  font-family: -apple-system-short-headline;
 }
 
 .book-title {
-  margin-top: 10px;
+  margin: 15px 0px 5px;
+  color: rgb(229, 229, 234);
 }
 
 .book-authors {
-  color: #999;
+  color: rgb(142, 142, 147);
 }
 
 .book-top {
   position: relative;
   height: 200px;
-  display: flex;
-  align-items: flex-end;
+  /* display: flex;
+  align-items: flex-end; */
 }
 
 .book-shelf-changer {
+  z-index: 20;
   position: absolute;
-  right: 0;
-  bottom: -10px;
+  right: 5px;
+  bottom: 5px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: rgba(255, 255, 255, 0.5);
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 20px;
+  background-size: 40px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -184,11 +198,36 @@ button:active {
   cursor: pointer;
 }
 
+.book-shelf-changer-hover {
+  background: rgb(0, 132, 255);
+  background-image: url('./icons/arrow-drop-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px;
+}
+
 /* book cover */
 
 .book-cover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-size: contain;
   background: #eee;
+  border-radius: 5px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.book-cover-faded {
+  background-color: rgba(90, 90, 90, 0.25);
+  z-index: 10;
+  position: absolute;
+  border-radius: 5px;
+  top: 0px;
+  left: 0px;
+  width: 150px;
+  height: 200px;
+
 }
 
 .book-cover-title {
@@ -196,3 +235,4 @@ button:active {
   text-align: center;
   font-size: 0.8em;
 }
+

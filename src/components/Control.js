@@ -10,7 +10,8 @@ export default class Control extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            shelf: null
+            shelf: null,
+            hover: false
         }
     }
 
@@ -35,9 +36,21 @@ export default class Control extends Component {
         this.props.editBook(id, book)
     }
 
+    activeHover() {
+        this.setState({
+            hover: true
+        })
+    }
+
+    inactiveHover() {
+        this.setState({
+            hover: false
+        })
+    }
+
     render() {
         return (
-            <div className="book-shelf-changer">
+            <div className={`book-shelf-changer ${(this.state.hover) ? 'book-shelf-changer-hover' : ''}`} onMouseEnter = {this.activeHover.bind(this)} onMouseLeave = {this.inactiveHover.bind(this)}>
                 <select value = {this.state.shelf || this.props.shelf} onChange = {this.handleChange.bind(this)}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
