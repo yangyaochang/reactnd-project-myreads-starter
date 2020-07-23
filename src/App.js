@@ -65,7 +65,7 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
           <Route path = '/search'>
-            <SearchPage editBook = {this.editBook.bind(this)}/>
+            <SearchPage editBook = {this.editBook.bind(this)} books = {this.state.books}/>
           </Route>
       
           <Route exact path = '/'>

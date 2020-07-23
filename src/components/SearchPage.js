@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import {getAll, search} from '../BooksAPI'
+import {search} from '../BooksAPI'
 import Book from './Book'
 
 // @description Represents the search page
@@ -27,6 +27,7 @@ export default class SearchPage extends Component {
         })
 
         if (value !== '') {this.updateList(value)}
+        else {this.clearList()}
     }
 
     updateList(value) {
@@ -38,20 +39,38 @@ export default class SearchPage extends Component {
                     found: false
                 })
             } else {
+                let list = this.getAssignedBooks()
+
                 this.setState({
                     books: books.map(book => {
                         return {
                             id: book.id,
                             title: book.title,
-                            author: book.authors,
-                            backgroundImage: book.imageLinks.thumbnail,
-                            shelf: 'none'
+                            author: ('authors' in book) ? book.authors : null,
+                            backgroundImage: ('imageLinks' in book) ? book.imageLinks.thumbnail : null,
+                            shelf: (book.id in list) ? list[book.id] : 'none'
                         }
                     }),
                     found: true
                 }) 
             }        
         })
+    }
+
+    clearList() {
+        this.setState({
+            books: []
+        }) 
+    }
+
+    getAssignedBooks() {
+        let list = {}
+
+        this.props.books.forEach(book => {
+            list[book.id] = book.shelf
+        })
+
+        return list
     }
 
     render() {
