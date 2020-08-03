@@ -36,7 +36,3 @@ All books in this project are called from a backend API. It uses a fixed set of 
 
 
 That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
-
-## Reference
-
-This project is one of my learning outcomes of [Udacity's React Developer Nanodegree Program](https://www.udacity.com/course/react-nanodegree--nd019)
